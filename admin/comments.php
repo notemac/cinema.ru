@@ -15,6 +15,7 @@ if ($now > $_SESSION['expired']) {
 
 require_once '../db.php';
 require_once '../models/comments.php';
+require_once '../models/films.php';
 
 $link = db_connect();
 
@@ -22,30 +23,31 @@ $action = isset($_GET['action']) ?  $_GET['action'] : '';
 
 if ($action == 'add') {
     if (!empty($_POST)) {
-        film_add($link, $_POST['name'], $_POST['country'], $_POST['genre'], $_POST['actor'], $_POST['description'], $_POST['poster']);
-        header("Location: ./films.php");
+        comment_add($link, $_POST['visitor_name'], $_POST['text'], $_POST['film_id']);
+        header("Location: ./comments.php");
     }
     $films = films_all($link);
-    include '../views/admin_film.php';
+    $films = array_combine(array_column($films, 'id'), array_column($films, 'name'));
+    include '../views/admin_comment.php';
 }
 elseif ($action == 'delete') {
     if (!isset($_GET["id"]))
-        header("Location: ./films.php");
+        header("Location: ./comments.php");
     $id = (int)$_GET['id'];
-    film_delete($link, $id);
-    header('Location: ./films.php');
+    comment_delete($link, $id);
+    header('Location: ./comments.php');
 }
 elseif ($action == 'edit') { 
  
     if (!isset($_GET["id"]))
-        header("Location: ./films.php");
+        header("Location: ./comments.php");
     $id = (int)$_GET['id'];
     if (!empty($_POST) && $id >= 0) {
-        film_edit($link, $id, $_POST['name'], $_POST['country'], $_POST['genre'], $_POST['actor'], $_POST['description'], $_POST['poster']);
-        header('Location: ./films.php');
+        comment_edit($link, $id, $_POST['visitor_name'], $_POST['text']);
+        header('Location: ./comments.php');
     }
-    $film = film_get($link, $id);
-    include '../views/admin_film.php';
+    $comment = comment_get($link, $id);
+    include '../views/admin_comment.php';
 }
 else {
     $items = comments_all($link);

@@ -26,7 +26,6 @@ if ($action == 'add') {
         film_add($link, $_POST['name'], $_POST['country'], $_POST['genre'], $_POST['actor'], $_POST['description'], $_POST['poster']);
         header("Location: ./films.php");
     }
-    $films = films_all($link);
     include '../views/admin_film.php';
 }
 elseif ($action == 'delete') {

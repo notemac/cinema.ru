@@ -40,6 +40,10 @@ nav {
     display: flex;
 }
 
+textarea {
+    resize: none;
+}
+
 .navbar {
     width: 100%;
     display: flex;
@@ -488,7 +492,7 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.form-film label {
+.form-film, .form-comment label {
     color: #5e5bfa;
 }
 .film-title {
@@ -507,8 +511,8 @@ footer {
     background-color: #171c28;;
     color: #fff;
     resize: none;
-  
 }
+
 .title-auth {
     text-align: center;
     padding-top: 50px;

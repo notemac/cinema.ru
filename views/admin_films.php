@@ -12,7 +12,6 @@ if ($now > $_SESSION['expired']) {
     session_destroy();
     die(SESSION_EXPIRED);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +32,8 @@ if ($now > $_SESSION['expired']) {
                     <div class="navbar-logo"></div>
                     <div class="navbar-wrapper">
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="#">Фильмы</a></div>
-                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="timetable.php">Расписание</a></div>
-                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="comments.php">Комментарии</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/timetable.php">Расписание</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/comments.php">Комментарии</a></div>
                     </div>
                 </div>
             </div>
@@ -47,6 +46,7 @@ if ($now > $_SESSION['expired']) {
                 <h2 class="film-title title-auth">
                     Список фильмов
                 </h2>
+                <button class="button button-auth" onclick='document.location="\\admin/films.php?action=add"'>Добавить</button>
                 <table>
                 <?php foreach($films as $film): ?> 
                     <tr>
@@ -56,7 +56,6 @@ if ($now > $_SESSION['expired']) {
                     </tr>
                 <?php endforeach ?> 
                 </table>
-                <button class="button button-auth" onclick='document.location="\\admin/films.php?action=add"'>Добавить</button>
             </div>
         </div>
     </main>

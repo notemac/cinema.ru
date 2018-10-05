@@ -32,8 +32,8 @@ if ($now > $_SESSION['expired']) {
                 <div class="navbar">
                     <div class="navbar-logo"></div>
                     <div class="navbar-wrapper">
-                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="films.php">Фильмы</a></div>
-                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="timetable.php">Расписание</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/films.php">Фильмы</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/timetable.php">Расписание</a></div>
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="#">Комментарии</a></div>
                     </div>
                 </div>
@@ -47,6 +47,7 @@ if ($now > $_SESSION['expired']) {
                 <h2 class="film-title title-auth">
                     Список комментариев
                 </h2>
+                <button class="button button-auth" onclick='document.location="\\admin/comments.php?action=add"'>Добавить</button>
                 <table>
                 <?php foreach($items as $comments): ?> 
                 <tr><td colspan="4"><h2><?=$comments[0]['film_name']?></h2></td> </tr>
@@ -54,13 +55,12 @@ if ($now > $_SESSION['expired']) {
                     <tr valign="top">
                         <td width="25%"><?=$comment['visitor_name']?></td>
                         <td><textarea class="comment-preview" cols="30" rows="3" disabled="true" readonly><?=$comment['text']?></textarea></td>
-                        <td><a href="\admin/films.php?action=edit&id=<?=$comment['id']?>">Редактировать</a></td>
-                        <td><a href="\admin/films.php?action=delete&id=<?=$comment['id']?>">Удалить</a></td>
+                        <td><a href="\admin/comments.php?action=edit&id=<?=$comment['id']?>">Редактировать</a></td>
+                        <td><a href="\admin/comments.php?action=delete&id=<?=$comment['id']?>">Удалить</a></td>
                     </tr>
                     <?php endforeach ?>
                 <?php endforeach ?> 
                 </table>
-                <button class="button button-auth" onclick='document.location="\\admin/films.php?action=add"'>Добавить</button>
             </div>
         </div>
     </main>

@@ -18,8 +18,8 @@
             else {
                 $_SESSION['admin'] = true;
                 $_SESSION['created'] = time();
-                // Ending a session in 30 minutes from the starting time
-                $_SESSION['expired'] = $_SESSION['created'] + 30*60;
+                // Ending a session in 60 minutes from the starting time
+                $_SESSION['expired'] = $_SESSION['created'] + 60*60;
                 header("Location: ./films.php");
             }
         }

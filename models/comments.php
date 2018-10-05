@@ -25,67 +25,47 @@ function comments_all($link) {
 
 
 
-function film_get($link, $id) {
-    $query = sprintf("SELECT * FROM film WHERE id=%d", (int)$id);
+function comment_get($link, $id) {
+    $query = sprintf("SELECT * FROM comment WHERE id=%d", (int)$id);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
     
-    $film = mysqli_fetch_assoc($result);
-    return $film;
+    $comment = mysqli_fetch_assoc($result);
+    return $comment;
 }
 
-function film_add($link, $name, $country, $genre, $actor, $description, $poster) {
-    $name = trim($name);
-    $country = trim($country);
-    $genre = trim($genre);
-    $actor = trim($actor);
-    $description = trim($description);
-    $poster = trim($poster);
+function comment_add($link, $visitor_name, $text, $film_id) {
+    $visitor_name = trim($visitor_name);
+    if ($visitor_name == '') $visitor_name = 'anonymous';
+    $text = trim($text);
 
-    $sql = "INSERT INTO film (name, country, genre, actor, description, poster) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')";
-    $query = sprintf($sql, mysqli_real_escape_string($link, $name),
-                        mysqli_real_escape_string($link, $country),
-                        mysqli_real_escape_string($link, $genre),
-                        mysqli_real_escape_string($link, $actor),
-                        mysqli_real_escape_string($link, $description),
-                        mysqli_real_escape_string($link, $poster));
+    $sql = "INSERT INTO comment (visitor_name, text, film_id) VALUES ('%s', '%s', '%d')";
+    $query = sprintf($sql, mysqli_real_escape_string($link, $visitor_name),
+                        mysqli_real_escape_string($link, $text),
+                        $film_id);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
 }
 
-function film_edit($link, $id, $name, $country, $genre, $actor, $description, $poster) {
-    $name = trim($name);
-    $country = trim($country);
-    $genre = trim($genre);
-    $actor = trim($actor);
-    $description = trim($description);
-    $poster = trim($poster);
-    $sql = "UPDATE film SET name='%s', country='%s', genre='%s', actor='%s', description='%s' WHERE id='%d'";
-    $query = sprintf($sql, mysqli_real_escape_string($link, $name),
-                            mysqli_real_escape_string($link, $country),
-                            mysqli_real_escape_string($link, $genre),
-                            mysqli_real_escape_string($link, $actor),
-                            mysqli_real_escape_string($link, $description),
+function comment_edit($link, $id, $visitor_name, $text) {
+    $visitor_name = trim($visitor_name);
+    if ($visitor_name == '') $visitor_name = 'anonymous';
+    $text = trim($text);
+    $sql = "UPDATE comment SET visitor_name='%s', text='%s' WHERE id='%d'";
+    $query = sprintf($sql, mysqli_real_escape_string($link, $visitor_name),
+                            mysqli_real_escape_string($link, $text),
                             $id);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
-
-    if ($poster != '') {
-        $sql = "UPDATE film SET poster='%s' WHERE id='%d'";
-        $query = sprintf($sql, mysqli_real_escape_string($link, $poster), $id);
-        $result = mysqli_query($link, $query);
-        if (!$result)
-            die(mysqli_error($link));
-    }
     return mysqli_affected_rows($link);
 }
 
-function film_delete($link, $id) {
+function comment_delete($link, $id) {
     if ($id >= 0) {
-        $query = sprintf("DELETE FROM film WHERE id='%d'", $id);
+        $query = sprintf("DELETE FROM comment WHERE id='%d'", $id);
         $result = mysqli_query($link, $query);
     
         if (!$result)
