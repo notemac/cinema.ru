@@ -50,16 +50,16 @@ if ($now > $_SESSION['expired']) {
                 <form class="form-comment" method="post" action="\admin/comments.php?action=<?=@$_GET['action']?>&id=<?=@$_GET['id']?>">
                     <?php if (isset($films)) :?> 
                     <label for="film_id">Фильм</label>
-                    <select class="auth-input" name="film_id">
+                    <select class="auth-input" name="film_id" autofocus>
                     <?php foreach($films as $film_id => $film_name): ?>
                         <option value="<?=$film_id?>"><?=$film_name?></option>
                     <?php endforeach ?>
                     </select>
                     <?php endif ?>
                     <label for="visitor_name">Пользователь</label>
-                    <input class="auth-input" type="text" name="visitor_name" value="<?=@$comment['visitor_name']?>" maxlength="30" autofocus required>
+                    <input class="auth-input" type="text" name="visitor_name" value="<?=@$comment['visitor_name']?>" maxlength="30"  required>
                     <label for="text">Комментарий</label>
-                    <textarea class="auth-input" type="text" name="text" value="" rows="10" maxlength="1000" required><?=@$comment['text']?></textarea>
+                    <textarea class="auth-input" type="text" name="text" value="" rows="10" maxlength="500" required><?=@$comment['text']?></textarea>
                     <button type="submit" class="button button-auth">Сохранить</button>
                 </form>
             </div>

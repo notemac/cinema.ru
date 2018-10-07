@@ -23,7 +23,7 @@ $action = isset($_GET['action']) ?  $_GET['action'] : '';
 
 if ($action == 'add') {
     if (!empty($_POST)) {
-        comment_add($link, $_POST['visitor_name'], $_POST['text'], $_POST['film_id']);
+        comment_add($link, $_POST['visitor_name'], $_POST['text'], (int)$_POST['film_id']);
         header("Location: ./comments.php");
     }
     $films = films_all($link);

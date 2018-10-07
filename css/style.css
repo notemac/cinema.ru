@@ -504,6 +504,11 @@ footer {
     line-height: 1.25;
 }
 
+.test1 {
+    display: inline-block;
+    color: #5e5bfa;
+    width: 60%;
+}
 .comment-preview {
     border: none;
     box-sizing: border-box;

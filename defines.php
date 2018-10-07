@@ -1,4 +1,5 @@
 <?php
+//НЕКОТОРЫЕ КОНСТАНТЫ
 define('ACCESS_DENIED', 
 '<!DOCTYPE html>
 <head>

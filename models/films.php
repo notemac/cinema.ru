@@ -1,7 +1,7 @@
 <?php
 
 function films_all($link) {
-    $query = "SELECT * FROM film ORDER by id DESC";
+    $query = "SELECT * FROM film ORDER by name ASC";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
@@ -19,7 +19,7 @@ function films_all($link) {
 
 
 function film_get($link, $id) {
-    $query = sprintf("SELECT * FROM film WHERE id=%d", (int)$id);
+    $query = sprintf("SELECT * FROM film WHERE id=%d", $id);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));

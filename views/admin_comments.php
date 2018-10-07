@@ -49,8 +49,8 @@ if ($now > $_SESSION['expired']) {
                 </h2>
                 <button class="button button-auth" onclick='document.location="\\admin/comments.php?action=add"'>Добавить</button>
                 <table>
-                <?php foreach($items as $comments): ?> 
-                <tr><td colspan="4"><h2><?=$comments[0]['film_name']?></h2></td> </tr>
+                <?php foreach($items as $film_name => $comments): ?> 
+                <tr><td colspan="4"><h2><?=$film_name?></h2></td> </tr>
                     <?php foreach($comments as $comment): ?> 
                     <tr valign="top">
                         <td width="25%"><?=$comment['visitor_name']?></td>

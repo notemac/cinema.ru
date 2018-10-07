@@ -53,7 +53,7 @@ if ($now > $_SESSION['expired']) {
                     <label for="country">Страна</label>
                     <input class="auth-input" type="text" name="country" value="<?=@$film['country']?>" maxlength="50" required>
                     <label for="genre">Жанр</label>
-                    <input class="auth-input" type="text" name="genre" value="<?=@$film['genre']?>" maxlength="150" required>
+                    <input class="auth-input" type="text" name="genre" value="<?=@$film['genre']?>" maxlength="150" placeholder="жанр1/жанр2/жанр3/..." required>
                     <label for="genre">В ролях</label>
                     <input class="auth-input" type="text" name="actor" value="<?=@$film['actor']?>" maxlength="400" required>
                     <label for="description">Описание</label>

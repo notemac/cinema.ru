@@ -33,7 +33,7 @@ if ($now > $_SESSION['expired']) {
                     <div class="navbar-logo"></div>
                     <div class="navbar-wrapper">
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/films.php">Фильмы</a></div>
-                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="#">Расписание</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/timetable.php">Расписание</a></div>
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/comments.php">Комментарии</a></div>
                     </div>
                 </div>
@@ -43,24 +43,23 @@ if ($now > $_SESSION['expired']) {
     </header>
     <main>
         <div class="container">
-            <div class="comments-wrapper">
+            <div class="films-wrapper">
                 <h2 class="film-title title-auth">
-                    Расписание сеансов
+                    Редактирование сеанса
                 </h2>
-                <button class="button button-auth" onclick='document.location="\\admin/timetable.php?action=add"'>Добавить</button>
-                <table>
-                <?php foreach($items as $date => $seances): ?> 
-                <tr><td colspan="4"><h2><?=$date?></h2></td> </tr>
-                    <?php foreach($seances as $seance): ?> 
-                    <tr>
-                        <td width="35%"><?=$seance['film_name']?></td>
-                        <td width="35%"><?=$seance['time']?></td>
-                        <td><a href="\admin/timetable.php?action=edit&id=<?=$seance['id']?>">Редактировать</a></td>
-                        <td><a href="\admin/timetable.php?action=delete&id=<?=$seance['id']?>">Удалить</a></td>
-                    </tr>
+                <form class="form-comment" method="post" action="\admin/timetable.php?action=<?=@$_GET['action']?>&id=<?=@$_GET['id']?>">
+                    <label for="film_id">Фильм</label>
+                    <select class="auth-input" name="film_id" autofocus>
+                    <?php foreach($films as $film_id => $film_name): ?>
+                        <option value="<?=$film_id?>" <? if ($film_id == $seance['film_id']) echo 'selected'?>><?=$film_name?></option>
                     <?php endforeach ?>
-                <?php endforeach ?> 
-                </table>
+                    </select>
+                    <label for="date">Дата</label>
+                    <input class="auth-input" type="date" name="date" value="<?=@$seance['date']?>" required>
+                    <label for="time">Время</label>
+                    <input class="auth-input" type="text" name="time" value="<?=@$seance['time']?>" maxlength="100" placeholder="hh:mm hh:mm ..."  required>
+                    <button type="submit" class="button button-auth">Сохранить</button>
+                </form>
             </div>
         </div>
     </main>
