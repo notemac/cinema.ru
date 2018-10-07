@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Кинотеатр MELIODAS</title>
+    <title>Кинотеатр "ПОБЕДА"</title>
 </head>
 
 <body>
@@ -27,9 +27,9 @@
     <main>
         <div class="container">
             <div class="siema">
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider2.jpg" alt=""></div>
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider1.jpg" alt=""></div>
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider3.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider1.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider2.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider3.jpg" alt=""></div>
             </div>
             <h2 class="title">
                 Победа – многофункциональное культурно-досуговое учреждение
@@ -57,28 +57,27 @@
                     остекления галерей с глухими стенами залов.
                 </p>
             </div>
-            <a class="link" href="#">Посмотреть расписание</a>
             <h2 class="title">
                 Кинотеатр, проверенный временем
             </h2>
             <div class="photos">
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/1.jpg" alt="movie-building">
+                    <img class="photos-item__img" src="./img/index/1.jpg" alt="movie-building">
                 </div>
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/2.jpg" alt="movie-building">
+                    <img class="photos-item__img" src="./img/index/2.jpg" alt="movie-building">
                 </div>
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/3.jpg" alt="movie-building">
+                    <img class="photos-item__img" src="./img/index/3.jpg" alt="movie-building">
                 </div>
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/4.jpg" alt="movie-building">
+                    <img class="photos-item__img" src="./img/index/4.jpg" alt="movie-building">
                 </div>
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/5.jpg" alt="movie-building">
+                    <img class="photos-item__img" src="./img/index/5.jpg" alt="movie-building">
                 </div>
                 <div class="photos-item">
-                    <img class="photos-item__img" src="./images/6.jpg" alt="childrens">
+                    <img class="photos-item__img" src="./img/index/6.jpg" alt="people">
                 </div>
             </div>
         </div>
@@ -94,10 +93,10 @@
                 <div class="footer-item">
                     <h4 class="footer-item__title">Меню</h4>
                     <div class="footer-nav">
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Главная</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Расписание</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Контакты</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">О компании</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\index.php">Главная</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\timetable.php">Расписание</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\contacts.php">Контакты</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\about.php">О компании</a></div>
                     </div>
                 </div>
                 <div class="footer-item">
@@ -107,9 +106,9 @@
             </div>
         </div>
     </footer>
-    <script src="./js/siema.min.js"></script>
+    <script src="\js/siema.min.js"></script>
     <script>
-        // Инициализация слайдера, с его настройками
+        // Инициализация слайдера с его настройками
         const mySiema = new Siema({
             duration: 200,
             easing: 'ease-out',
@@ -120,7 +119,7 @@
         });
 
         // Запускаем автопрокрутку каждый 3 секунды
-        setInterval(() => mySiema.prev(), 3000)
+        setInterval(() => mySiema.prev(), 3000);
     </script>
 </body>
 

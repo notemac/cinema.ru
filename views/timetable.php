@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Кинотеатр MELIOODAS</title>
+    <title>Кинотеатр "ПОБЕДА"</title>
 </head>
 
 <body>
@@ -28,12 +28,12 @@
     <main>
         <div class="container">
             <div class="siema">
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider2.jpg" alt=""></div>
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider1.jpg" alt=""></div>
-                <div class="siema-item"><img class="siema-item__img" src="./images/slider3.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider1.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider2.jpg" alt=""></div>
+                <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider3.jpg" alt=""></div>
             </div>
             <div>
-                <span class="title">
+                <span class="title" id="timetable-block">
                     Расписание кинотеатра 
                     <form class="test1">
                          <input id="qwe" onchange="handler(event);" class="auth-input" type="date" value="<?=$date?>">
@@ -74,10 +74,10 @@
                 <div class="footer-item">
                     <h4 class="footer-item__title">Меню</h4>
                     <div class="footer-nav">
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Главная</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Расписание</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Контакты</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">О компании</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\index.php">Главная</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\timetable.php">Расписание</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\contacts.php">Контакты</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\about.php">О компании</a></div>
                     </div>
                 </div>
                 <div class="footer-item">
@@ -105,7 +105,7 @@
     <script>
         function handler(event){
             if (event.target.value != '')
-                window.location.href = './timetable.php?date='+ event.target.value;
+                window.location.href = './timetable.php?date='+ event.target.value + '#timetable-block';
         }
     </script>
 </body>

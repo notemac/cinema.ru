@@ -35,6 +35,7 @@ if ($now > $_SESSION['expired']) {
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/films.php">Фильмы</a></div>
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/timetable.php">Расписание</a></div>
                         <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="#">Комментарии</a></div>
+                        <div class="navbar-wrapper-item"><a class="navbar-wrapper-item__link" href="\admin/index.php?exit=yes">Выйти</a></div>
                     </div>
                 </div>
             </div>

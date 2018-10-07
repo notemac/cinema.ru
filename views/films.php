@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Кинотеатр MELIODAS</title>
+    <title>Кинотеатр "ПОБЕДА"</title>
 </head>
 
 <body>
@@ -94,10 +94,10 @@
                 <div class="footer-item">
                     <h4 class="footer-item__title">Меню</h4>
                     <div class="footer-nav">
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Главная</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Расписание</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">Контакты</a></div>
-                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="#">О компании</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\index.php">Главная</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\timetable.php">Расписание</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\contacts.php">Контакты</a></div>
+                        <div class="footer-nav-item"><a class="footer-nav-item__link" href="\about.php">О компании</a></div>
                     </div>
                 </div>
                 <div class="footer-item">

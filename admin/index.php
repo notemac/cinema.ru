@@ -3,6 +3,13 @@
     if (!empty($_SESSION['admin'])) {
         header("Location: ./films.php");
     }
+    if (isset($_GET['exit']))
+    {
+        unset($_SESSION['expired']);
+        unset($_SESSION['admin']);
+        session_destroy();
+        header("Location: ./index.php");
+    }
 
     require_once '../db.php';
     $link = db_connect();
