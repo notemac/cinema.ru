@@ -45,7 +45,7 @@ if ($now > $_SESSION['expired']) {
     <main>
         <div class="container">
             <div class="comments-wrapper">
-                <h2 class="film-title title-auth">
+                <h2 class="film-title">
                     Расписание сеансов
                 </h2>
                 <button class="button button-auth" onclick='document.location="\\admin/timetable.php?action=add"'>Добавить</button>

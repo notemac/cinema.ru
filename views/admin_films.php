@@ -44,7 +44,7 @@ if ($now > $_SESSION['expired']) {
     <main>
         <div class="container">
             <div class="films-wrapper">
-                <h2 class="film-title title-auth">
+                <h2 class="film-title">
                     Список фильмов
                 </h2>
                 <button class="button button-auth" onclick='document.location="\\admin/films.php?action=add"'>Добавить</button>

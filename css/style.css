@@ -27,7 +27,7 @@ a {
 
 .container {
     width: 1124px;
-    margin: 0 auto;
+    margin: 0 auto; /*выравниваем контент по центру*/
 }
 
 /* НАВИГАЦИЯ */
@@ -55,20 +55,18 @@ textarea {
 }
 
 .navbar-wrapper-item {
-    margin: 6px 6px 0 6px;
-    /* box-sizing: border-box - чтобы padding был внутри ширины и высоты элемента*/
-    cursor: pointer;
-    transition: 0.2s;
+    margin: 6px 6px 0 6px; 
+    /* box-sizing: border-box;*/
+    transition: 0.5s;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     color: #fff;
     background-color: #5e5bfa;
-    transition: 0.2s;
 }
 
 .navbar-wrapper-item:hover {
-    background-color: #4743fd;
+    background-color: yellow;
 }
 
 .navbar-wrapper-item__link {
@@ -78,9 +76,6 @@ textarea {
     display: block;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
 }
 
@@ -107,7 +102,7 @@ textarea {
 /* ЦЕНТРАЛЬНЫЙ БЛОК С КОНТЕНТОМ */
 
 main {
-    flex: auto;
+    /*flex: auto;*/
     padding-top: 20px;
     box-sizing: border-box;
 }
@@ -131,12 +126,11 @@ main {
 
 .content-wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .content {
-    width: 30%;
+    width: 48%;
     text-align: justify;
     font-size: 18px;
     color: rgba(153, 163, 186, 0.5);
@@ -159,19 +153,14 @@ main {
     margin-bottom: 16px;
 }
 
-.link {
-    max-width: 220px;
-    text-align: center;
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #5e5bfa;
-    transition: 0.2s;
+.timetable-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
-.link:hover {
-    background-color: #4743fd;
+.date-picker {
+    width: 60%;
+    margin-top: 30px;
 }
 
 /* ЦЕНТРАЛЬНЫЙ БЛОК С КОНТЕНТОМ */
@@ -187,8 +176,8 @@ main {
 .grid-item {
     display: flex;
     justify-content: center;
-    width: 17%;
-    overflow: hidden;
+    width: 21%;
+    /*overflow: hidden;*/ 
     margin-bottom: 45px;
 }
 
@@ -198,31 +187,25 @@ main {
     flex-direction: column;
 }
 
-.movive .link {
-    margin: 0 auto;
-}
-
 .poster {
     width: 100%;
-    height: 285px;
+    height: 330px;
     overflow: hidden;
-    margin-bottom: 12px;
-    cursor: pointer;
+    margin-bottom: 0px;
 }
 
 .poster-img {
     width: 100%;
-    max-width: 100%;
     height: auto;
     transition: 0.5s;
 }
 
-.poster:hover .poster-img {
+.poster-img:hover {
     transform: scale(1.25);
 }
 
-.movie-title {
-    font-size: 20px;
+.movie-title_ {
+    font-size: 24px;
     margin: 6px 0;
 }
 
@@ -247,12 +230,6 @@ main {
     border-radius: 3px;
     margin-right: 6px;
 }
-
-.movie-times__item--full {
-    padding: 6px;
-    font-size: 16px;
-}
-
 /*  СЕТКА С РАПИСАНИЕМ */
 
 /* КОНКРЕТНЫЙ ФИЛЬМ С ОПИСАНИЕМ */
@@ -316,7 +293,6 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 0;
     box-sizing: border-box;
 }
 
@@ -332,6 +308,8 @@ main {
     background-color: #2b3448;
     margin-bottom: 24px;
     border-radius: 5px;
+    width: 100%;
+    display: flex;
 }
 
 .comments-form {
@@ -362,7 +340,7 @@ main {
 
 /* КОММЕНТАРИИ */
 
-/* ФОТКИ КИНОТЕАТРА */
+/* ФОТО КИНОТЕАТРА */
 
 .photos {
     display: flex;
@@ -386,13 +364,13 @@ main {
 
 /* ФОТКИ КИНОТЕАТРА */
 
-/* КАРТЫ */
+/* КАРТА */
 
 .map {
     margin-bottom: 26px;
 }
 
-/* КАРТЫ */
+/* КАРТА */
 
 /* КОНТАКТЫ */
 
@@ -430,7 +408,7 @@ footer {
 }
 
 .footer-item__title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
 }
 
 .footer-nav {
@@ -452,11 +430,6 @@ footer {
 
 /* АВТОРИЗАЦИЯ */
 
-.title-auth {
-    text-align: center;
-    padding-top: 50px;
-    color: yellow;
-}
 
 .auth {
     width: 27%;
@@ -464,6 +437,13 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+.title-auth {
+    text-align: center;
+    padding-top: 50px;
+    color: yellow;
+}
+
 .auth-input {
     border: none;
     width: 100%;
@@ -483,8 +463,6 @@ footer {
 
 /* АВТОРИЗАЦИЯ */
 
-
-
 /*ПАНЕЛЬ АДМИНИСТРАТОРА*/
 .films-wrapper, .comments-wrapper {
     width: 70%;
@@ -492,23 +470,20 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.form-film, .form-comment label {
+.form-film, .form-comment{
     color: #5e5bfa;
 }
 .film-title {
     font-weight: normal;
     font-size: 38px;
-    color: rgba(153, 163, 186, 0.75);
+    color: yellow;
     margin-bottom: 26px;
     margin-top: 26px;
     line-height: 1.25;
+    text-align: center;
+    padding-top: 50px;
 }
 
-.test1 {
-    display: inline-block;
-    color: #5e5bfa;
-    width: 60%;
-}
 .comment-preview {
     border: none;
     box-sizing: border-box;
@@ -518,8 +493,3 @@ footer {
     resize: none;
 }
 
-.title-auth {
-    text-align: center;
-    padding-top: 50px;
-    color: yellow;
-}

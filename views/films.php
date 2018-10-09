@@ -62,9 +62,7 @@
             <!-- ФИЛЬМ -->
             <!-- КОММЕНТАРИИ -->
             <div class="comments" id="comments-block">
-                <h2 class="title">
-                    Комментарии:
-                </h2>
+                <h2 class="title"> Комментарии: </h2>
                 <form class="comments-form" method="post" action="\films.php?id=<?=@$_GET['id']?>#comments-block">
                     <input class="comments-input" type="text" name="comment" maxlength="500"  placeholder="Написать комментарий">
                     <button type="submit" class="button">Отправить</button>
@@ -109,18 +107,16 @@
     </footer>
     <script src="./js/siema.min.js"></script>
     <script>
-        // Инициализация слайдера, с его настройками
-        const mySiema = new Siema({
-            duration: 200,
-            easing: 'ease-out',
+         // Инициализация слайдера с его настройками
+         const mySiema = new Siema({
+            duration: 500,
             perPage: 1,
             startIndex: 0,
-            rtl: true,
             loop: true,
         });
 
         // Запускаем автопрокрутку каждый 3 секунды
-        setInterval(() => mySiema.prev(), 3000)
+        setInterval(() => mySiema.next(), 3000)
     </script>
 </body>
 

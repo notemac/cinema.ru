@@ -45,7 +45,7 @@ if ($now > $_SESSION['expired']) {
     <main>
         <div class="container">
             <div class="films-wrapper">
-                <h2 class="film-title title-auth">
+                <h2 class="film-title">
                     Редактирование комментария
                 </h2>
                 <form class="form-comment" method="post" action="\admin/comments.php?action=<?=@$_GET['action']?>&id=<?=@$_GET['id']?>">

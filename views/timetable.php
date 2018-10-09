@@ -32,13 +32,13 @@
                 <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider2.jpg" alt=""></div>
                 <div class="siema-item"><img class="siema-item__img" src="\img/slider/slider3.jpg" alt=""></div>
             </div>
-            <div>
-                <span class="title" id="timetable-block">
+            <div class="timetable-title-wrapper">
+                <h2 class="title" id="timetable-block">
                     Расписание кинотеатра 
-                    <form class="test1">
-                         <input id="qwe" onchange="handler(event);" class="auth-input" type="date" value="<?=$date?>">
-                    </form>
-                </span>
+                </h2>
+                <form class="date-picker">
+                        <input onchange="OnPickDate(event);" class="auth-input" type="date" value="<?=$date?>">
+                </form>
              </div>
             <!-- СЕТКА С РАСПИСАНИЕМ -->
             <div class="grid">
@@ -46,9 +46,9 @@
                 <div class="grid-item">
                     <div class="movie">
                         <div class="poster">
-                            <a href="\films.php?id=<?=$seance['film_id']?>" target="_blank"><img src="\img/films/<?=$seance['poster']?>" alt="Не удалось загрузить постер" class="poster-img"></a>
+                            <a href="\films.php?id=<?=$seance['film_id']?>" target="_blank"><img src="\img/films/<?=$seance['poster']?>" class="poster-img" alt="Не удалось загрузить постер"></a>
                         </div>
-                        <div class="movie-title"><a href="\films.php?id=<?=$seance['film_id']?>" target="_blank"><?=$seance['film_name']?></a></div>
+                        <div class="movie-title_"><a href="\films.php?id=<?=$seance['film_id']?>" target="_blank"><?=$seance['film_name']?></a></div>
                         <div class="movie-genre"><?=$seance['genre']?></div>
                         <div class="movie-times">
                             <?php foreach($seance['time'] as $time): ?> 
@@ -86,24 +86,22 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>   
     <script src="./js/siema.min.js"></script>
     <script>
         // Инициализация слайдера, с его настройками
-        const mySiema = new Siema({
-            duration: 200,
-            easing: 'ease-out',
+         const mySiema = new Siema({
+            duration: 500,
             perPage: 1,
             startIndex: 0,
-            rtl: true,
             loop: true,
         });
 
         // Запускаем автопрокрутку каждый 3 секунды
-        setInterval(() => mySiema.prev(), 3000)
+        setInterval(() => mySiema.next(), 3000)
     </script>
     <script>
-        function handler(event){
+        function OnPickDate(event){
             if (event.target.value != '')
                 window.location.href = './timetable.php?date='+ event.target.value + '#timetable-block';
         }

@@ -94,18 +94,16 @@
     </footer>
     <script src="./js/siema.min.js"></script>
     <script>
-        // Инициализация слайдера, с его настройками
-        const mySiema = new Siema({
-            duration: 200,
-            easing: 'ease-out',
+         // Инициализация слайдера с его настройками
+         const mySiema = new Siema({
+            duration: 500,
             perPage: 1,
             startIndex: 0,
-            rtl: true,
             loop: true,
         });
 
         // Запускаем автопрокрутку каждый 3 секунды
-        setInterval(() => mySiema.prev(), 3000)
+        setInterval(() => mySiema.next(), 3000)
     </script>
 </body>
 
